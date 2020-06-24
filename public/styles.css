@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --color-default: #2962ca;
+}
+
+/*===Comum a todos as páginas===*/
+* {
+  /*Preenchimentos, margens e bordas zeradas para tudo*/
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+body {
+  /*Cor de fundo do site*/
+  background-color: var(--color-default);
+  /*Familia de fontes Roboto para o site todo*/
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  /*Cor de fundo do cabeçalho*/
+  background-color: white;
+  /*Largura total do cabeçalho*/
+  width: 100%;
+  /*Preenchimento em todos os lados*/
+  padding: 32px;
+  /*Respeitando o limite de 100% da largura*/
+  box-sizing: border-box;
+  /*alinhamento do texto*/
+  text-align: center;
+}
+
+.links {
+  /*tamanho da fonte*/
+  font-size: 22px;
+}
+
+/*Somente o a seguido de outro que receberá as propriedades*/
+.links a + a{
+  /*Margem a esquerda*/
+  margin-left: 32px;
+}
+
+.links a {
+  /*Retira sublinhado*/
+  text-decoration: none;
+  /*Cor*/
+  color: #777;
+  /*Posição relativa para configurar a absoluta nos filhos*/
+  position: relative;
+}
+
+.links a.active {
+  /*Negrito*/
+  font-weight: bold;
+  /*Cor*/
+  color: var(--color-default);
+}
+
+.links a:hover {
+  /*Cor*/
+  color: var(--color-default);
+}
+
+/*Pseudo elemento depois de a*/
+.links a::after {
+  /*Obrigatório para pseudo elementos*/
+  content: "";
+  /*largura em 0 para a animação*/
+  width: 0;
+  /*Altura*/
+  height: 3px;
+  /*Cor*/
+  background-color: var(--color-default);
+  /*Posição absoluta em relação ao pai A*/
+  position: absolute;
+  /*colado na esquerda*/
+  left: 0;
+  /*abaixo do fundo*/
+  bottom: -3px;
+}
+
+.links a:hover::after {
+  /*Largura máxima para a animação*/
+  width: 100%;
+  /*Transição será em largura com duração de 300ms*/
+  transition: width 300ms ease-in-out;
+}
