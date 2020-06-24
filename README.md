@@ -1,7 +1,4 @@
-<h1 align="center" style="
-  color: #2962ca;
-  font-weight: bold;
-  font-size: 50px">
+<h1 align="center">
   Private Lessons
 </h1>
 
