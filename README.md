@@ -14,12 +14,16 @@
 </p>
 
 ## :bookmark: Sobre
-Sistema de gerenciamento de professores e alunos em aulas particulares
+Sistema de gerenciamento de professores e alunos para aulas particulares
 Ainda em desenvolvimento...
 
 ## :computer: Tecnologias Utilizadas
 - HTML
 - CSS
+- JavaScript
+- NodeJS
+- Express
+- Nunjucks
 
 ## :dart: Objetivo
 Sistema tem como objetivo disponibilizar:

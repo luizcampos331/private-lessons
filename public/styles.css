@@ -2,6 +2,7 @@
 
 :root {
   --color-default: #2962ca;
+  --color-yellow: #fffb00;
 }
 
 /*===Comum a todos as páginas===*/
@@ -87,4 +88,156 @@ header {
   width: 100%;
   /*Transição será em largura com duração de 300ms*/
   transition: width 300ms ease-in-out;
+}
+
+/*===Página - Instructor===*/
+.card {
+  /*Cor de fundo*/
+  background-color: white;
+  /*Largura*/
+  width: 800px;
+  /*Altura*/
+  min-height: 400px;
+  /*Margem 45 no topo e fundo e auto nas lateriais para centralizar*/
+  margin: 45px auto;
+  /*Display de grade*/
+  display: grid;
+  /*primeiro elemento com 40% e seundo com 60%*/
+  grid-template-columns: 0.8fr 1.2fr;
+  /*sombra - eixo X, eixo Y, blur, espalhamento, cor com alfa*/
+  box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.5);
+  /*Cantos arredondados*/
+  border-radius: 10px;
+  /*nome da Animação*/
+  animation-name: op;
+  /*Duração da animação*/
+  animation-duration: 900ms;
+  /*Termina suave*/
+  animation-timing-function: ease-out;
+}
+
+/*Animação*/
+@keyframes op {
+  /*from = 0%*/
+  from {
+    opacity: 0;
+  }
+  /*to = 100%*/
+  to {
+    opacity: 1;
+  }
+}
+
+.avatar {
+  /*Imagem de fundo randomica do unsplash da coleção 6800490, não se repete, centraliza o eixo x e y, cover preenche a elemento todo*/
+  background: url('https://source.unsplash.com/collection/517198/500x500') no-repeat center center / cover;
+  /*Cantos superior esquerdo e inferior esquerdo arredondados*/
+  border-radius: 10px 0 0 10px;
+}
+
+.details {
+  /*Preenchimento em todos os lados*/
+  padding: 32px;
+}
+
+.details h3 {
+  /*Cor do texto*/
+  color: var(--color-default);
+  /*Tamanho da fonte*/
+  font-size: 20px;
+  /*Transforma todas as letras em mausculas*/
+  text-transform: uppercase;
+  /*Espaçamento entre as letras*/
+  letter-spacing: 1px;
+  /*Peso da fonte - negrito*/
+  font-weight: bold;
+}
+
+.details .item {
+  /*Borda no fundo com 1px solida em preto com alfa*/
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  /*preenchimento de 16 no topo e fundo e 0 nas laterais*/
+  padding: 16px 0;
+}
+
+/*Se aplica ao ultimo elemento de .item*/
+.details .item:last-child {
+  /*ser nenhuma borda*/
+  border: none;
+}
+
+/*Se aplica a primeira div do .item*/
+.details .item div:nth-child(1) {
+  /*Cor do texto*/
+  color: rgb(139, 138, 138);
+  /*Altura da linha*/
+  line-height: 24px;
+  /*Espaçamento entre as letras*/
+  letter-spacing: 0.7px;
+}
+
+/*Se aplica a segunda div do .item*/
+.details .item div:nth-child(2) {
+  /*Cor do texto*/
+  color: rgb(65, 65, 65);
+  /*Peso da fonte - negrito*/
+  font-weight: bold;
+  /*Tamanho da fonte*/
+  font-size: 18px;
+}
+
+.details .item:nth-child(4) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.details .item span {
+  /*preenchimento de 8 no topo e fundo e 16 nas laterais*/
+  padding: 8px 16px;
+  /*cor do fundo*/
+  background-color: var(--color-yellow);
+  /*cor do texto*/
+  color: #777;
+  /*arredondamento dos cantos*/
+  border-radius: 30px;
+  /*Margem esquerda*/
+  margin-right: 4px;
+  /*margem topo*/
+  margin-top: 8px;
+  /*Estratégia para respeitar o margin-top*/
+  display: inline-block;
+  /*Peso da fonte - negrito*/
+  font-weight: bold;
+  /*Transforma todas as letras em mausculas*/
+  text-transform: uppercase;
+  /*Tamanho da fonte*/
+  font-size: 13px;
+}
+
+/*grau de escolaridade e tipo de aula*/
+.details .items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /*Borda no fundo com 1px solida em preto com alfa*/
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  /*preenchimento de 16 no topo e fundo e 0 nas laterais*/
+  padding: 16px 0;
+}
+
+.details .items div div:nth-child(1) {
+  /*Cor do texto*/
+  color: rgb(139, 138, 138);
+  /*Altura da linha*/
+  line-height: 24px;
+  /*Espaçamento entre as letras*/
+  letter-spacing: 0.7px;
+}
+
+.details .items div div:nth-child(2) {
+  /*Cor do texto*/
+  color: rgb(65, 65, 65);
+  /*Peso da fonte - negrito*/
+  font-weight: bold;
+  /*Tamanho da fonte*/
+  font-size: 18px;
 }
