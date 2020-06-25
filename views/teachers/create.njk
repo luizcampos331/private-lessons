@@ -1,0 +1,83 @@
+<!-- Extendendo as partes repetidas para o layout.njk -->
+{% extends "layout.njk" %}
+
+<!-- Conteúdo do bloco head irá substituir o head no layout.njk -->
+{% block head %}
+  <title>Teachers - Private Lessons</title>
+{% endblock %}
+
+<!-- Conteúdo do bloco content irá substituir o conteúdo no layout.njk -->
+{% block content %}
+  <form class="card" method="POST" action="/teachers">
+
+    <section class="avatar"></section>
+
+    <section class="details">
+      <h3>Novo professor(a)</h3>
+
+      <div class="item">
+        <div>Avatar URL</div>
+        <div>
+          <input 
+            type="url" 
+            name="avatar_url"
+            placeholder="http://">
+        </div>
+      </div>
+
+      <div class="item">
+        <div>Professor(a)</div>
+        <div>
+          <input 
+            type="text"
+            name="name"
+            placeholder="Nome completo">
+        </div>
+      </div>
+
+      <div class="items">
+        <div>
+          <div>Data de nascimento</div>
+          <div>
+            <input 
+              type="date" 
+              name="birth">
+          </div>
+        </div>
+
+        <div>
+          <div>Grau de escolaridade</div>
+          <select name="education_level">
+            <option selected>Escolha uma escolaridade</option> 
+            <option>Ensino médio completo</option>
+            <option>Ensino superior completo</option>
+            <option>Mestrado</option>
+            <option>Doutorado</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>Tipo de aula</div>
+        <div>
+          <span><input type="radio" name="type_class" value="Á distância" checked> Á distância</span>
+          <span><input type="radio" name="type_class" value="Presencial"> Presencial</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div>Área de atuação</div>
+        <div>
+          <input 
+            type="text" 
+            name="field"
+            placeholder="Separe as áreas por vírgula">
+        </div>
+      </div>
+
+      <button type="submit">Salvar</button>
+
+    </section>
+
+  </div>
+{% endblock %}

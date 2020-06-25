@@ -5,10 +5,13 @@ const nunjucks = require('nunjucks');
 
 //Importando as funcionalidades de routes em uma variável
 const routes = require('./routes');
+const { urlencoded } = require('express');
 
 //Iniciando o express na variável server
 const server = express();
 
+//Responsável por liberar a passagem de dados de um formulário POST via req.body
+server.use(urlencoded({ extended: true }));
 //Server poderá usar arquivos estáticos (css) da pasta public
 server.use(express.static('public'));
 //Server irá usar as funcionalidades do routes

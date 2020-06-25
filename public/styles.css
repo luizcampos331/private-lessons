@@ -26,7 +26,7 @@ header {
   /*Largura total do cabeçalho*/
   width: 100%;
   /*Preenchimento em todos os lados*/
-  padding: 32px;
+  padding: 25px;
   /*Respeitando o limite de 100% da largura*/
   box-sizing: border-box;
   /*alinhamento do texto*/
@@ -186,11 +186,6 @@ header {
   font-size: 18px;
 }
 
-.details .item:nth-child(4) {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
 .details .item span {
   /*preenchimento de 8 no topo e fundo e 16 nas laterais*/
   padding: 8px 16px;
@@ -240,4 +235,59 @@ header {
   font-weight: bold;
   /*Tamanho da fonte*/
   font-size: 18px;
+}
+
+/*===Página - Create teachers===*/
+input {
+  /*Largura total*/
+  width: 100%;
+  /*sem borda ao estr com foco*/
+  outline: none;
+  /*Cor do texto*/
+  color: rgb(65, 65, 65);
+  /*Peso da fonte - negrito*/
+  font-weight: bold;
+  /*Tamanho da fonte*/
+  font-size: 18px;
+}
+
+input[type='date'] {
+  width: 80%;
+}
+
+input[type='radio'] {
+  /*Largura inicial*/
+  width: initial;
+  /*Margin de 4 na direita para separar radio do texto e 1 no fundo para centralizar*/
+  margin: 0 4px 1px 0;
+  /*Alinhamento vertical no meio*/
+  vertical-align: middle;
+}
+
+input::placeholder {
+  /*Tamanho da fonte*/
+  font-size: 16px;
+  /*Peso da fonte - normal*/
+  font-weight: normal;
+}
+
+button[type="submit"] {
+  /*preenchimento do botão 8 no topo e fundo e 0 nas laterais*/
+  padding: 8px 0;
+  /*Cor de fundo*/
+  background-color: var(--color-default);
+  /*Cor do texto*/
+  color: white;
+  /*Peso da fonte - negrito*/
+  font-weight: bold;
+  /*arredondamento dos cantos*/
+  border-radius: 10px;
+  /*margem do topo*/
+  margin-top: 20px;
+  /*Largura total*/
+  width: 100%;
+  /*Tamanho da fonte*/
+  font-size: 16px;
+  /*Ponteiro pelo click*/
+  cursor: pointer;
 }
