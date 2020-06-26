@@ -20,7 +20,12 @@ routes.get('/teachers/create', function(req, res) {
   return res.render('teachers/create');
 });
 
-//Rota tipo POST para recepção dos dados do instrutor
+//Rota tipo GET para a página de teachers daseado no id
+routes.get('/teachers/:id', teachers.show);
+
+routes.get('/teachers/:id/edit', teachers.edit);
+
+//Rota tipo POST para recepção dos dados do professor
 routes.post('/teachers', teachers.post);
 
 //Rota tipo GET para a página principal

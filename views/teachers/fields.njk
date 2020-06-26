@@ -1,0 +1,108 @@
+<div class="item">
+  <div>Avatar URL</div>
+  <div>
+    <input 
+      type="url" 
+      name="avatar_url"
+      placeholder="http://"
+      value="{{ teacher.avatar_url }}">
+  </div>
+</div>
+
+<div class="item">
+  <div>Professor(a)</div>
+  <div>
+    <input 
+      type="text"
+      name="name"
+      placeholder="Nome completo"
+      value="{{ teacher.name }}">
+  </div>
+</div>
+
+<div class="items">
+  <div>
+    <div>Data de nascimento</div>
+    <div>
+      <input 
+        type="date" 
+        name="birth"
+        value="{{ teacher.birth }}">
+    </div>
+  </div>
+
+  <div>
+    <div>Grau de escolaridade</div>
+    <select name="graduation">
+      <option>Escolha uma escolaridade
+      </option> 
+
+      <option 
+        value="medio"
+        {% if teacher.graduation == 'medio' %}
+        selected
+        {% endif %}>Ensino médio completo
+      </option>
+
+      <option 
+        value="superior"
+        {% if teacher.graduation == 'superior' %}
+        selected
+        {% endif %}>Ensino superior completo
+      </option>
+
+      <option 
+        value="mestrado"
+        {% if teacher.graduation == 'mestrado' %}
+        selected
+        {% endif %}>Mestrado
+      </option>
+
+      <option 
+        value="doutorado"
+        {% if teacher.graduation == 'doutorado' %}
+        selected
+        {% endif %}>Doutorado
+      </option>
+
+    </select>
+  </div>
+</div>
+
+<div class="item">
+  <div>Tipo de aula</div>
+  <div>
+
+    <span>
+      <input 
+        type="radio" 
+        name="type_class" 
+        value="Á distância" 
+        checked> Á distância
+    </span>
+
+    <span>
+      <input 
+        type="radio" 
+        name="type_class" 
+        value="Presencial"
+        {% if teacher.type_class == 'Presencial'%}
+        checked
+        {% endif %}> Presencial
+    </span>
+
+  </div>
+</div>
+
+<div class="item">
+  <div>Área de atuação</div>
+  <div>
+    <input 
+      type="text" 
+      name="fields"
+      placeholder="Separe as áreas por vírgula"
+      value="{{ teacher.fields }}">
+  </div>
+</div>
+
+<button type="submit">Salvar</button>

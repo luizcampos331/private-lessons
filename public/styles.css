@@ -212,7 +212,7 @@ header {
 /*grau de escolaridade e tipo de aula*/
 .details .items {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 0.8fr;
   /*Borda no fundo com 1px solida em preto com alfa*/
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   /*preenchimento de 16 no topo e fundo e 0 nas laterais*/
@@ -252,7 +252,7 @@ input {
 }
 
 input[type='date'] {
-  width: 80%;
+  width: 70%;
 }
 
 input[type='radio'] {
