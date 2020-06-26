@@ -100,3 +100,57 @@ exports.edit = function(req, res) {
     
     return res.render('teachers/edit', { teacher })
 }
+
+// === Método Update ===
+exports.put = function(req, res) {
+  //Pega o id que está vindo no corpo da requisição
+  const { id } = req.body;
+
+  let index = 0;
+  
+  /*Se algum id de professor for igual ao id passado corpo da requisição
+  os dados do professor serão guardados na variável foundTeachers */
+  const foundTeachers = data.teachers.find(function(teacher, foundIndex) {
+    if (id == teacher.id) {
+      index = foundIndex;
+      return true;
+    }
+  });
+
+  //Se não for achado nenhum professor com id igual ao da url é retornada uma mensagem
+  if(!foundTeachers) return res.send('Teacher not found!');
+
+  const cod = Number(id);
+
+  const teacher = {
+    ...foundTeachers,
+    ...req.body,
+    id: cod,
+    birth: Date.parse(req.body.birth),
+  }
+
+  data.teachers[index] = teacher;
+
+  fs.writeFile('data.json', JSON.stringify(data, null, 2), function(error) {
+    if(error) return res.send('Write error!');
+
+    return res.redirect(`teachers/${id}`)
+  })
+}
+
+// === Método Delete ===
+exports.delete = function(req, res) {
+  const { id } = req.body;
+
+  const filteredTeacher = data.teachers.filter(function(teacher) {
+    return id != teacher.id;
+  });
+
+  data.teachers = filteredTeacher;
+
+  fs.writeFile('data.json', JSON.stringify(data, null, 2), function(error) {
+    if(error) return res.send('Write error!');
+
+    return res.redirect('/teachers');
+  })
+}

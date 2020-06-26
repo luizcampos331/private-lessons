@@ -6,19 +6,9 @@
       "name": "Luiz Eduardo",
       "birth": 858384000000,
       "graduation": "superior",
-      "type_class": "Presencial",
+      "type_class": "Á distância",
       "fields": "Matemática, Física",
       "created_at": 1593182222492
-    },
-    {
-      "id": 2,
-      "avatar_url": "https://images.unsplash.com/photo-1550399105-05c4a7641b02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
-      "name": "Ana Júlia",
-      "birth": 923011200000,
-      "graduation": "mestrado",
-      "type_class": "Á distância",
-      "fields": "História, Sociologia",
-      "created_at": 1593189559832
     }
   ]
 }

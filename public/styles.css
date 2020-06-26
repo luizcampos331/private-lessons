@@ -271,7 +271,8 @@ input::placeholder {
   font-weight: normal;
 }
 
-button[type="submit"] {
+button[type="submit"],
+a.button {
   /*preenchimento do botão 8 no topo e fundo e 0 nas laterais*/
   padding: 8px 0;
   /*Cor de fundo*/
@@ -280,14 +281,46 @@ button[type="submit"] {
   color: white;
   /*Peso da fonte - negrito*/
   font-weight: bold;
+  /*Tamanho total*/
+  width: 100%;
   /*arredondamento dos cantos*/
   border-radius: 10px;
   /*margem do topo*/
   margin-top: 20px;
-  /*Largura total*/
-  width: 100%;
   /*Tamanho da fonte*/
   font-size: 16px;
   /*Ponteiro pelo click*/
   cursor: pointer;
+}
+
+a.button {
+  /*Preencher tudo*/
+  display: block;
+  /*Centraliza o texto*/
+  text-align: center;
+  /*Retira sublinhado*/
+  text-decoration: none;
+}
+
+#form-delete {
+  /*Posição relativa para que os filhos ficarem abosolutos*/
+  position: relative;
+}
+
+#form-delete button[type="submit"] {
+  /*Cor do botão*/
+  background-color: crimson;
+  /*Posicão absoluta dentro do pai*/
+  position: absolute;
+  /*Tamanho 48% pois terá um botão ao lado*/
+  width: 48%;
+  /*Totalmente a direita*/
+  right: 0;
+  /*Totalmente ao fundo, porém para cima*/
+  bottom: 0;
+}
+
+#form-put button[type="submit"] {
+  /*Tamanho 48% pois terá um botão ao lado*/
+  width: 48%;
 }

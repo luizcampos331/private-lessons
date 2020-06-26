@@ -5,6 +5,8 @@ const nunjucks = require('nunjucks');
 
 //Importando as funcionalidades de routes em uma variável
 const routes = require('./routes');
+const methodOverride = require('method-override');
+
 const { urlencoded } = require('express');
 
 //Iniciando o express na variável server
@@ -14,6 +16,9 @@ const server = express();
 server.use(urlencoded({ extended: true }));
 //Server poderá usar arquivos estáticos (css) da pasta public
 server.use(express.static('public'));
+/*Caso seja pedido, irá sobreescrever o method da página, nesse caso será para
+transformar o method POST em PUT */
+server.use(methodOverride('_method'));
 //Server irá usar as funcionalidades do routes
 server.use(routes);
 

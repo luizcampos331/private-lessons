@@ -28,6 +28,11 @@ routes.get('/teachers/:id/edit', teachers.edit);
 //Rota tipo POST para recepção dos dados do professor
 routes.post('/teachers', teachers.post);
 
+//Rota tipo PUT para alteração dos dados do professor
+routes.put('/teachers', teachers.put);
+
+routes.delete('/teachers', teachers.delete);
+
 //Rota tipo GET para a página principal
 routes.get('/students', function(req, res) {
   return res.render('students/index');

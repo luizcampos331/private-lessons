@@ -8,16 +8,34 @@
 
 <!-- Conteúdo do bloco content irá substituir o conteúdo no layout.njk -->
 {% block content %}
-  <form class="card" method="PUT" action="/teachers">
-
-    <section class="avatar"></section>
+  <div class="card">
+          
+    <section 
+      class="avatar"
+      style="background: url({{ teacher.avatar_url }}) no-repeat center center / cover; border-radius: 10px 0 0 10px;"">
+    </section>
 
     <section class="details">
-      <h3>Editar professor(a)</h3>
+      <!-- ?_method=PUT irá transformar o method desse formulário em PUT -->
+      <form id="form-put" method="POST" action="/teachers?_method=PUT">
 
-      {% include 'teachers/fields.njk' %}
+          <h3>Editar professor(a)</h3>
+
+          <!-- Input ficará escondido, servirá para disponibilizar o id do professor
+          para que o mesmo ter possa seus dados atualizados -->
+          <input type="hidden" name="id" value={{ teacher.id }}> 
+
+          {% include 'teachers/fields.njk' %}
+          
+      </form>
+
+      <form id="form-delete" method="POST" action="/teachers?_method=DELETE">
+        <input type="hidden" name="id" value={{ teacher.id }}>
+        <button type="submit">Deletar</button>
+      </form>
 
     </section>
 
   </div>
+
 {% endblock %}
