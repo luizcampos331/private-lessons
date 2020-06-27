@@ -5,15 +5,15 @@ const teachers = require('./teachers');
 //Express da a variável a responsabilidade pelas rotas
 const routes = express.Router();
 
+/* === Rotas - Professores === */
+
 //Rota tipo GET para a página principal
 routes.get('/', function(req, res) {
   return res.redirect('/teachers');
 });
 
-//Rota tipo GET para a página principal
-routes.get('/teachers', function(req, res) {
-  return res.render('teachers/index');
-});
+//Rota tipo GET para página de professores
+routes.get('/teachers', teachers.index);
 
 //Rota tipo GET para a página de create instructors
 routes.get('/teachers/create', function(req, res) {
@@ -32,6 +32,8 @@ routes.post('/teachers', teachers.post);
 routes.put('/teachers', teachers.put);
 
 routes.delete('/teachers', teachers.delete);
+
+/* === Totas - Alunos === */
 
 //Rota tipo GET para a página principal
 routes.get('/students', function(req, res) {

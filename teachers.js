@@ -4,6 +4,24 @@ const data = require('./data.json');
 
 const { age, graduation, date } = require('./utils');
 
+// === Método Index ===
+exports.index = function(req, res) {
+  let teachers = []
+
+  let field = {}
+
+  for(let i = 0; i < data.teachers.length; i++) {
+    field = {
+      ...data.teachers[i],
+      fields: data.teachers[i].fields.split(',')
+    }
+
+    teachers.push(field)
+  }
+
+  return res.render('teachers/index', { teachers });
+}
+
 // === Método Show ===
 exports.show = function(req, res) {
   //Pega o id que está vindo como parametro na url

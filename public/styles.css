@@ -324,3 +324,135 @@ a.button {
   /*Tamanho 48% pois terá um botão ao lado*/
   width: 48%;
 }
+
+/*===Página - Teachers===*/
+.table-container {
+  /*elementos são disposto em todo o card, utilizado para sobrepor o grid anterior*/
+  display: block;
+  /*Preenchimento de todas as direções*/
+  padding: 40px;
+  /*Obedece a largura máxima imposta anteriormente*/
+  box-sizing: border-box;
+}
+
+.table-container table {
+  /*Sem espaço nas bordas*/
+  border-spacing: 0;
+  /*Margem do topo*/
+  margin-top: 20px;
+}
+
+td, th {
+  /*Preenchimento das linhas cabeçalho*/
+  padding: 14px;
+  /*Borda abaixo de cada linha*/
+  border-bottom: 1px solid #d9d9d9;
+  /*Todos os elementos centralizados ao meio*/
+  text-align: center;
+}
+
+th {
+  /*Texto do cabeçalho em maiusculo*/
+  text-transform: uppercase;
+  /*Cor do texto*/
+  color: #777;
+  /*Tamanho da fonte*/
+  font-size: 14px;
+}
+
+tbody tr:last-child td {
+  /*Ultima linha da tabela não tem borda no fundo*/
+  border-bottom: none;
+}
+
+tbody tr td:first-child {
+  /*Os elementos da primeira coluna são do tipo grade para caber a foto e o nome*/
+  display: grid;
+  /*A foto em 20px e o nome tem o resto, como nome esta centralizado, não ficará sobre a foto*/
+  grid-template-columns: 20px 1fr;
+  /*São alinhados ao centro*/
+  align-items: center;
+  /*Altura por linha*/
+  height: 65px;
+}
+
+tbody tr td + td {
+  /*Largura máxima da coluna do meio*/
+  max-width: 400px;
+}
+
+tbody tr td:first-child span {
+  /*Largura da foto*/
+  width: 40px;
+  /*Altura da foto*/
+  height: 40px;
+  /*Posição da foto*/
+  background-position: center;
+  /*Tamanho da foto - cobrindo todo o container*/
+  background-size: cover;
+  /*Bordar em 50% para a foto ficar redonda*/
+  border-radius: 50%;
+  /*Efeito de sombra*/
+  box-shadow: 5px 3px 10px -5px black;
+  /*Borda da tofo*/
+  border: 2px solid var(--color-default);
+}
+
+tbody tr td:last-child a {
+  /*Cor do botão de ação*/
+  background-color: var(--color-default);
+  /*Preenchimento de 8 no topo e fundo e 16 nas laterais*/
+  padding: 8px 16px;
+  /*Remove sublinhado*/
+  text-decoration: none;
+  /*Texto do botão em maiusculo*/
+  text-transform: uppercase;
+  /*Peso da fonte - negrito*/
+  font-weight: bold;
+  /*Cor do texto*/
+  color: white;
+  /*Tamanho da fonte*/
+  font-size: 14px;
+  /*Arredondamento dos cantos*/
+  border-radius: 15px;
+}
+
+.table-container .fields{
+  /*preenchimento de 8 no topo e fundo e 16 nas laterais*/
+  padding: 8px 16px;
+  /*cor do fundo*/
+  background-color: var(--color-yellow);
+  /*cor do texto*/
+  color: #777;
+  /*arredondamento dos cantos*/
+  border-radius: 30px;
+  /*margem topo*/
+  margin: 2px;
+  /*Estratégia para respeitar o margin-top*/
+  display: inline-block;
+  /*Peso da fonte - negrito*/
+  font-weight: bold;
+  /*Transforma todas as letras em mausculas*/
+  text-transform: uppercase;
+  /*Tamanho da fonte*/
+  font-size: 13px;
+}
+
+.create {
+  /*Cor do botão - novo professor*/
+  background-color: var(--color-default);
+  /*Preenchimento de 8 no topo e fundo e 16 nas laterais*/
+  padding: 8px 16px;
+  /*Remove sublinhado*/
+  text-decoration: none;
+  /*Texto do botão em maiusculo*/
+  text-transform: uppercase;
+  /*Peso da fonte - negrito*/
+  font-weight: bold;
+  /*Cor do texto*/
+  color: white;
+  /*Tamanho da fonte*/
+  font-size: 14px;
+  /*Arredondamento dos cantos*/
+  border-radius: 15px;
+}

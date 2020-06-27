@@ -27,8 +27,9 @@ Ainda em desenvolvimento...
 
 ## :dart: Objetivo
 Sistema tem como objetivo disponibilizar:
-- Página de detalhes do(a) professor(a)
-- Página de cadastro do(a) professor(a)
+- Página de listagem de professores
+- Página de detalhes de professores
+- Página de cadastro, edição e exclusão de professores
 - Página de alunos - Vazio
 
 ## :package: Como Baixar o projeto

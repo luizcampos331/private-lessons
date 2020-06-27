@@ -3,56 +3,44 @@
 
 <!-- Conteúdo do bloco head irá substituir o head no layout.njk -->
 {% block head %}
-  <title>Teachers - Private Lessons</title>
+  <title>Professores - Private Lessons</title>
 {% endblock %}
 
 <!-- Conteúdo do bloco content irá substituir o conteúdo no layout.njk -->
 {% block content %}
-  <div class="card">
+  <div class="card table-container ">
 
-    <section 
-      class="avatar"
-      style="background: url('https://source.unsplash.com/collection/517198/500x500') no-repeat center center / cover;   border-radius: 10px 0 0 10px;"></section>
+    <a class="create" href="teachers/create">Novo Professor</a>
 
-    <section class="details">
-      <h3>Detalhes</h3>
+    <table width="100%">
+      <thead>
+        <tr>
+          <th>Professor</th>
+          <th>Acompanhamento</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for teacher in teachers %}
+          <tr>
 
-      <div class="item">
-        <div>Nome completo</div>
-        <div>Luiz Eduardo Campos da Silva</div>
-      </div>
+            <td>
+              <span style="background-image: url({{ teacher.avatar_url }})"></span>
+              {{ teacher.name }}
+            </td>
 
-      <div class="item">
-        <div>Idade</div>
-        <div>28</div>
-      </div>
+            <td>
+              {% for field in teacher.fields %}<span class="fields">{{ field }}</span>{% endfor %}
+            </td>
 
-      <div class="items">
-        <div>
-          <div>Grau de escolaridade</div>
-          <div>Mestrado</div>
-        </div>
+            <td>
+              <a href="/teachers/{{ teacher.id }}">Ver</a>
+            </td>
 
-        <div>
-          <div>Tipo de aula</div>
-          <div>À distância</div>
-        </div>
-      </div>
-      
-      <div class="item">
-        <div>Acompanhamento</div>
-        <div>
-          <span>Matemática</span>
-          <span>Física</span>
-        </div>
-      </div>
-
-      <div class="item">
-        <div>Desde</div>
-        <div>15/04/2018</div>
-      </div>
-
-    </section>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
 
   </div>
 {% endblock %}
