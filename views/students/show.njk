@@ -1,0 +1,54 @@
+<!-- Extendendo as partes repetidas para o layout.njk -->
+{% extends "layout.njk" %}
+
+<!-- Conteúdo do bloco head irá substituir o head no layout.njk -->
+{% block head %}
+  <title>Detalhes do estudante - Private Lessons</title>
+{% endblock %}
+
+<!-- Conteúdo do bloco content irá substituir o conteúdo no layout.njk -->
+{% block content %}
+  <div class="card">
+
+    <section 
+      class="avatar"
+      style="background: url({{ student.avatar_url }}) no-repeat center center / cover;   border-radius: 10px 0 0 10px;"></section>
+
+    <section class="details">
+      <h3>Detalhes</h3>
+
+      <div class="item">
+        <div>Estudante</div>
+        <div>{{ student.name }}</div>
+      </div>
+
+      <div class="item">
+        <div>Idade</div>
+        <div>{{ student.age }}</div>
+      </div>
+
+      <div class="item">
+        <div>
+          <div>E-mail</div>
+          <div>{{ student.email }}</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>
+          <div>Ano escolar</div>
+          <div>{{ student.school }}</div>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div>Carga horária semanal (h)</div>
+        <div>{{ student.hours }}</div>
+      </div>
+
+      <a href="/students/{{ student.id }}/edit" class="button">Editar</a>
+
+    </section>
+
+  </div>
+{% endblock %}

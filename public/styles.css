@@ -212,7 +212,7 @@ header {
 /*grau de escolaridade e tipo de aula*/
 .details .items {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.2fr 0.9fr;
   /*Borda no fundo com 1px solida em preto com alfa*/
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   /*preenchimento de 16 no topo e fundo e 0 nas laterais*/
@@ -238,7 +238,7 @@ header {
 }
 
 /*===Página - Create teachers===*/
-input {
+input, select {
   /*Largura total*/
   width: 100%;
   /*sem borda ao estr com foco*/
@@ -338,8 +338,6 @@ a.button {
 .table-container table {
   /*Sem espaço nas bordas*/
   border-spacing: 0;
-  /*Margem do topo*/
-  margin-top: 20px;
 }
 
 td, th {
@@ -369,7 +367,7 @@ tbody tr td:first-child {
   /*Os elementos da primeira coluna são do tipo grade para caber a foto e o nome*/
   display: grid;
   /*A foto em 20px e o nome tem o resto, como nome esta centralizado, não ficará sobre a foto*/
-  grid-template-columns: 20px 1fr;
+  grid-template-columns: 43px 1fr;
   /*São alinhados ao centro*/
   align-items: center;
   /*Altura por linha*/
@@ -398,7 +396,8 @@ tbody tr td:first-child span {
   border: 2px solid var(--color-default);
 }
 
-tbody tr td:last-child a {
+tbody tr td:last-child a,
+.table-container a {
   /*Cor do botão de ação*/
   background-color: var(--color-default);
   /*Preenchimento de 8 no topo e fundo e 16 nas laterais*/
@@ -415,6 +414,13 @@ tbody tr td:last-child a {
   font-size: 14px;
   /*Arredondamento dos cantos*/
   border-radius: 15px;
+}
+
+.table-container .new{
+  /*Margem de 16px do fundo*/
+  margin-bottom: 16px;
+  /*Aplica a margem e não preenche toda a largura*/
+  display: inline-block;
 }
 
 .table-container .fields{
@@ -436,23 +442,4 @@ tbody tr td:last-child a {
   text-transform: uppercase;
   /*Tamanho da fonte*/
   font-size: 13px;
-}
-
-.create {
-  /*Cor do botão - novo professor*/
-  background-color: var(--color-default);
-  /*Preenchimento de 8 no topo e fundo e 16 nas laterais*/
-  padding: 8px 16px;
-  /*Remove sublinhado*/
-  text-decoration: none;
-  /*Texto do botão em maiusculo*/
-  text-transform: uppercase;
-  /*Peso da fonte - negrito*/
-  font-weight: bold;
-  /*Cor do texto*/
-  color: white;
-  /*Tamanho da fonte*/
-  font-size: 14px;
-  /*Arredondamento dos cantos*/
-  border-radius: 15px;
 }

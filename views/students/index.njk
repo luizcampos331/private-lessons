@@ -3,10 +3,49 @@
 
 <!-- Conteúdo do bloco head irá substituir o head no layout.njk -->
 {% block head %}
-  <title>Students - Private Lessons</title>
+  <title>Estudantes - Private Lessons</title>
 {% endblock %}
 
 <!-- Conteúdo do bloco content irá substituir o conteúdo no layout.njk -->
 {% block content %}
-  students
+  <div class="card table-container ">
+
+    <a class="new" href="/students/create">Novo</a>
+
+    <table width="100%">
+      <thead>
+        <tr>
+          <th>Estudante</th>
+          <th>E-mail</th>
+          <th>Ano Escolar</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for student in students %}
+          <tr>
+
+            <td>
+              <span style="background-image: url({{ student.avatar_url }})"></span>
+              {{ student.name }}
+            </td>
+
+            <td>
+              <span>{{ student.email }}</span>
+            </td>
+
+            <td>
+              <span>{{ student.school }}</span>
+            </td>
+
+            <td>
+              <a href="/students/{{ student.id }}">Ver</a>
+            </td>
+
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
 {% endblock %}

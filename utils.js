@@ -11,18 +11,7 @@ module.exports = {
     
     return age;
   },
-  graduation: function(level) {
-    switch (level) {
-      case 'medio':
-        return 'Ensino médio completo';
-      case 'superior': 
-        return 'Ensino superior completo';
-      case 'mestrado':
-        return 'Mestrado';
-      default:
-        return 'Doutorado'
-    }
-  },
+
   date: function(timestamp) {
     const date = new Date(timestamp);
 
@@ -37,6 +26,42 @@ module.exports = {
     //Pega o dia dd
     const day = `0${date.getUTCDate()}`.slice(-2);
 
-    return `${year}-${month}-${day}`;
+    return {
+      iso: `${year}-${month}-${day}`
+    };
+  },
+
+  graduation: function(level) {
+    switch (level) {
+      case 'medio':
+        return 'Ensino médio completo';
+      case 'superior': 
+        return 'Ensino superior completo';
+      case 'mestrado':
+        return 'Mestrado';
+      default:
+        return 'Doutorado'
+    }
+  },
+
+  grade: function(shools) {
+    switch (shools) {
+      case '5ef':
+        return '5º Ano do Ensino Fundamental';
+      case '6ef':
+        return '6º Ano do Ensino Fundamental';
+      case '7ef':
+        return '7º Ano do Ensino Fundamental';  
+      case '8ef':
+        return '8º Ano do Ensino Fundamental';
+      case '9ef':
+        return '9º Ano do Ensino Fundamental';
+      case '1em':
+        return '1º Ano do Ensino Médio'; 
+      case '2em':
+        return '2º Ano do Ensino Médio'; 
+      default:
+        return '3º Ano do Ensino Médio'; 
+    }
   }
 }

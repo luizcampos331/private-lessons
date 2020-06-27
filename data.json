@@ -3,12 +3,42 @@
     {
       "id": 1,
       "avatar_url": "https://images.unsplash.com/photo-1509869175650-a1d97972541a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-      "name": "Luiz Eduardo",
+      "name": "Luiz Campos",
       "birth": 858384000000,
       "graduation": "mestrado",
       "type_class": "Á distância",
       "fields": "Matemática, Física",
       "created_at": 1593182222492
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1009&q=80",
+      "name": "Lúcia do Rocio",
+      "birth": 285984000000,
+      "graduation": "mestrado",
+      "type_class": "Á distância",
+      "fields": "Português, História",
+      "created_at": 1593289884664
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+      "name": "Marcela da Silva",
+      "birth": 1047600000000,
+      "email": "marcela@hotmail.com",
+      "school": "3em",
+      "hours": "21"
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+      "name": "Manuela do Nascimento",
+      "birth": 1087516800000,
+      "email": "manu.nasci@gmail.com",
+      "school": "2em",
+      "hours": "18"
     }
   ]
 }
