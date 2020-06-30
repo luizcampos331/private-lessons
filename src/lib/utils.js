@@ -27,7 +27,8 @@ module.exports = {
     const day = `0${date.getUTCDate()}`.slice(-2);
 
     return {
-      iso: `${year}-${month}-${day}`
+      iso: `${year}-${month}-${day}`,
+      format: `${day}/${month}/${year}`
     };
   },
 

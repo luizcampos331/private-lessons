@@ -1,7 +1,7 @@
 const express = require('express');
 
-const teachers = require('./controllers/teachers');
-const students = require('./controllers/students');
+const teachers = require('./app/controllers/teachers');
+const students = require('./app/controllers/students');
 
 //Express da a variável a responsabilidade pelas rotas
 const routes = express.Router();
@@ -43,7 +43,6 @@ routes.post('/students', students.post);
 routes.put('/students', students.put);
 //Rota tipo DELETE para exclusão de um professor
 routes.delete('/students', students.delete);
-
 
 //Exportando a variável routes
 module.exports = routes;
