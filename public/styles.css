@@ -396,8 +396,7 @@ tbody tr td:first-child span {
   border: 2px solid var(--color-default);
 }
 
-tbody tr td:last-child a,
-.table-container a {
+tbody tr td:last-child a {
   /*Cor do botão de ação*/
   background-color: var(--color-default);
   /*Preenchimento de 8 no topo e fundo e 16 nas laterais*/
@@ -442,4 +441,72 @@ tbody tr td:last-child a,
   text-transform: uppercase;
   /*Tamanho da fonte*/
   font-size: 13px;
+}
+
+/*Filtros*/
+.table-container .header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.table-container .header a,
+.table-container .header form button {
+  background-color: var(--color-default);
+  padding: 8px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  font-size: 14px;
+  border-radius: 15px;
+  text-align: center;
+  outline: 0;
+  margin: 0;
+  width: 100px;
+}
+
+.table-container .header form {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  align-items: center;
+  grid-gap: 10px;
+}
+
+.table-container .header form input {
+  border: 1px solid #aaa;
+  border-radius: 15px;
+  padding: 4px 10px;
+  box-sizing: border-box;
+}
+
+/* === Paginação ===*/
+.table-container {
+  display: grid;
+  grid-template: 64px 1fr 16px / 1fr;
+}
+
+.table-container .header {
+  margin: 0;
+  align-self: start;
+}
+
+.table-container .pagination {
+  margin: 0;
+  align-self: end;
+  justify-self: center;
+}
+
+.pagination a,
+.pagination span {
+  color: var(--color-default);
+  text-decoration: none;
+  margin-right: 16px;
+  font-weight: bold;
+}
+
+.pagination a:hover {
+  filter: brightness(0.3);
+  border-bottom: 1px solid var(--color-default);
 }

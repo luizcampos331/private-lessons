@@ -10,13 +10,25 @@
 {% block content %}
   <div class="card table-container ">
 
-    <a class="new" href="/teachers/create">Novo</a>
+    <div class="header">
+      <a href="/teachers/create">Novo</a>
+      <form action="/teachers" method="GET">
+        <input 
+          type="text"
+          name="filter"
+          placeholder="Nome ou Atendimento"
+        >
+        <button type="submit">Filtrar</button>
+
+      </form>
+    </div>
 
     <table width="100%">
       <thead>
         <tr>
           <th>Professor</th>
           <th>Acompanhamento</th>
+          <th>Estudantes</th>
           <th>Ação</th>
         </tr>
       </thead>
@@ -33,6 +45,8 @@
               {% for field in teacher.fields %}<span class="fields">{{ field }}</span>{% endfor %}
             </td>
 
+            <td>{{ teacher.total_students }}</td>
+
             <td>
               <a href="/teachers/{{ teacher.id }}">Ver</a>
             </td>
@@ -41,6 +55,13 @@
         {% endfor %}
       </tbody>
     </table>
+
+    <div 
+      class="pagination"
+      data-page={{pagination.page}}
+      data-total={{pagination.total}}
+      data-filter={{filter}}
+    ></div>
 
   </div>
 {% endblock %}

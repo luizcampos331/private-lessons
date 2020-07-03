@@ -4,19 +4,47 @@ const { age, date, grade } = require('../../lib/utils');
 module.exports = {
   // === Método Index - Visualizar página ===
   index(req, res) {
-    Student.all(function(students) {
+    //Obtendo parametros passados pela URL (query usado após o ? em uma URL)
+    let { filter, page, limit } = req.query;
 
-      for(let i = 0; i < students.length; i++) {
-        students[i].school = grade(students[i].school);
+    //page recebe ele mesmo ou 1 caso ele esteja vazio
+    page = page || 1;
+    //limit recebe ele mesmo ou 2 caso ele esteja vazio
+    limit = limit || 2;
+    //Tendo os valores padrões acima, offset recebe 2 * (1 - 1) = 0
+    let offset = limit * (page - 1);
+
+    // Cria objeto params
+    const params = {
+      filter,
+      limit,
+      offset,
+      callback(students) {
+        const pagination = {
+          //Math.ceil arredonda para cima
+          total: Math.ceil(students[0].total / limit),
+          page
+        }
+
+        //Percorre o array de instrutors
+        for(let i = 0; i < students.length; i++){
+          //Separa os serviços dos instrutores em um array de serviços para apresentação
+          students[i].school = grade(students[i].school);
+        }
+        //Retorna página de instrutores renderizada
+        return res.render('students/index', { students, pagination, filter });
       }
-      
-      return res.render('students/index', { students })
-    })
+    }
+
+    // Inicia o paginate passado o objeto params como parametro
+    Student.paginate(params);
   },
 
   // === Método Create - Visualizar página ===
   create(req, res) {
-    return res.render('students/create');
+    Student.teacherSelectOptions(function(options) {
+      return res.render('students/create', { teacherOptions: options});
+    })
   },
 
   // === Método Post - Ação ===
@@ -45,7 +73,7 @@ module.exports = {
       student.school = grade(student.school);
       student.created_at = date(student.created_at).format;
 
-      return res.render(`students/show`, { student});
+      return res.render(`students/show`, { student });
     });
   },
 
@@ -55,7 +83,10 @@ module.exports = {
 
       student.birth = date(student.birth).iso;
 
-      return res.render(`students/edit`, { student});
+      Student.teacherSelectOptions(function(options) {
+
+        return res.render(`students/edit`, { student, teacherOptions: options});
+      })
     });
   },
 
